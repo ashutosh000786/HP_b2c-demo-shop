@@ -7,6 +7,8 @@
 
 namespace Pyz\Zed\DataImport;
 
+
+use Pyz\Zed\AntelopeDataImport\Communication\Plugin\DataImport\AntelopeDataImportPlugin; //Inserted for Simple Data import into Spryker
 use Spryker\Zed\CategoryDataImport\Communication\Plugin\CategoryDataImportPlugin;
 use Spryker\Zed\CategoryDataImport\Communication\Plugin\DataImport\CategoryStoreDataImportPlugin;
 use Spryker\Zed\CmsPageDataImport\Communication\Plugin\CmsPageDataImportPlugin;
@@ -251,6 +253,8 @@ class DataImportDependencyProvider extends SprykerDataImportDependencyProvider
     protected function getDataImporterPlugins(): array
     {
         return [
+
+            new AntelopeDataImportPlugin(), //Inserted for Simple Data import into Spryker
             new CategoryDataImportPlugin(),
             new ContentBannerDataImportPlugin(),
             new ContentProductAbstractListDataImportPlugin(),

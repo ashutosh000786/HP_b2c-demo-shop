@@ -1,0 +1,13 @@
+{% extends template('page-blank') %}
+
+{% define data = {
+    ant: _view.ant
+} %}
+
+{% block body %}
+    {% if data.ant is not null %}
+        My ant has the name {{ data.ant.name }}
+    {% else %}
+        No ant found :(
+    {% endif %}
+{% endblock %}
